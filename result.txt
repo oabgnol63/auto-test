@@ -1,0 +1,58 @@
+[H[2J[3J-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/Bao/cpp/test/build
+Consolidate compiler generated dependencies of target order
+[ 16%] Built target order
+Consolidate compiler generated dependencies of target customer
+[ 33%] Built target customer
+Consolidate compiler generated dependencies of target item
+[ 50%] Built target item
+Consolidate compiler generated dependencies of target interface
+[ 66%] Built target interface
+Consolidate compiler generated dependencies of target mainApp
+[ 83%] Built target mainApp
+Consolidate compiler generated dependencies of target testfile
+[100%] Built target testfile
+=============MENU==============
+1/ New customer
+2/ New item
+3/ List all customers
+4/ List all items
+5/ List all orders
+6/ Make a new order
+7/ Check order by customer's ID
+0/ Exit
+===============================
+Select a function: [H[2J[3JInsert item name: Insert item quantities: Insert price: =============MENU==============
+1/ New customer
+2/ New item
+3/ List all customers
+4/ List all items
+5/ List all orders
+6/ Make a new order
+7/ Check order by customer's ID
+0/ Exit
+===============================
+Select a function: [H[2J[3JItem ID 	 Name 			 Price 	 In stock 
+--------------------------------------------------
+Item_no_1 	 black king bar 	500000	 100	
+--------------------------------------------------
+Item_no_2 	 orchil malevolance 	600000	 100	
+--------------------------------------------------
+Item_no_3 	 divine rapier 	1e+06	 100	
+--------------------------------------------------
+Item_no_4 	 maelstrom 	750000	 100	
+--------------------------------------------------
+Item_no_5 	 etheral blade 	850000	 100	
+--------------------------------------------------
+=============MENU==============
+1/ New customer
+2/ New item
+3/ List all customers
+4/ List all items
+5/ List all orders
+6/ Make a new order
+7/ Check order by customer's ID
+0/ Exit
+===============================
+Select a function: 
