@@ -23,7 +23,22 @@ Consolidate compiler generated dependencies of target testfile
 7/ Check order by customer's ID
 0/ Exit
 ===============================
-Select a function: [H[2J[3JInsert item name: Insert item quantities: Insert price: =============MENU==============
+Select a function: [H[2J[3JList of available items: 
+Item ID 	 Name 			 Price 	 In stock 
+-----------------------------------------
+Item_no_1 	 black king bar 	500000	 100	
+--------------------------------------------------
+Item_no_2 	 orchil malevolance 	600000	 100	
+--------------------------------------------------
+Item_no_3 	 divine rapier 	1e+06	 100	
+--------------------------------------------------
+Item_no_4 	 maelstrom 	750000	 100	
+--------------------------------------------------
+Type customer's ID (numbers only): Type item's name: Quantities: Continue shopping? (Y|N): Customer not found! Create new... 
+Input your name: Input your address: Input your phone num: Assigned customer's ID: 2023002
+Assigned order's ID: 102170894
+Total: 1000000.00
+=============MENU==============
 1/ New customer
 2/ New item
 3/ List all customers
@@ -33,18 +48,22 @@ Select a function: [H[2J[3JInsert item name: Insert item quantities: Insert p
 7/ Check order by customer's ID
 0/ Exit
 ===============================
-Select a function: [H[2J[3JItem ID 	 Name 			 Price 	 In stock 
---------------------------------------------------
-Item_no_1 	 black king bar 	500000	 100	
---------------------------------------------------
-Item_no_2 	 orchil malevolance 	600000	 100	
---------------------------------------------------
-Item_no_3 	 divine rapier 	1e+06	 100	
---------------------------------------------------
-Item_no_4 	 maelstrom 	750000	 100	
---------------------------------------------------
-Item_no_5 	 etheral blade 	850000	 100	
---------------------------------------------------
+Select a function: [H[2J[3JName: nguyen van a
+Address: TMA
+Phone num: 911
+Id: 2023001
+Ordered list: 
+Total spent: 0.00
+Rank: Bronze
+-----------------------------
+Name: nam
+Address: tma
+Phone num: 911
+Id: 2023002
+Ordered list: 102170894 
+Total spent: 1000000.00
+Rank: Bronze
+-----------------------------
 =============MENU==============
 1/ New customer
 2/ New item
