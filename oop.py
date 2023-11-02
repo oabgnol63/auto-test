@@ -8,7 +8,7 @@ class oop:
 
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
 
-    def __init__(self, ifile_url, ofile_url, tc_session_reset=True):
+    def __init__(self, ifile_url, ofile_url, tc_session_reset=True) -> None:
         self.__ifile = ifile_url   #private
         self._ofile = ofile_url    #protected
 
@@ -138,9 +138,3 @@ class oop:
         """
         os.remove(filename)
 
-
-# e1 = Example("./in.txt","./out.txt")
-# #print(e1._Example__ifile)          #mangling
-# #e1.match_regex_customer()
-# print(e1.verify_orderID_in_customer("nam"))
-# e1.empty_file("./out.txt")

@@ -1,6 +1,6 @@
 #!/usr/bin/env robot
 *** Settings ***
-Resource           ex1_2.resource
+Resource           ex1_2.resource    
 Suite Setup   
     ...            Run Keywords
     ...            Log To Console    \nTest Suite Setup.....\n\n------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ Test Teardown
 Suite Teardown        
     ...            Run Keywords    
     ...            Terminate All Processes    kill=True    
-    ...     AND    Log to Console    \nComment out @{filename} at <ex1.resource> to read the output file\n  
+    ...     AND    Log to Console    \nComment out @{filename} file at Resource to read the output file\n  
     ...     AND    Delete All Files 
     ...     AND    Log To Console    Test Suite Teardown.....\n
 
@@ -106,9 +106,10 @@ Verify <Make a new order> Function With Valid Input Set
         ...  Select (3) |  Expect this customer will be listed with <List all customers>, and /Order list/ includes new generated order's ID
         ...  Select (0) |  Exit program
     [Tags]    test6
-    ${proc6}   Run Process  echo -n "6\n123\ndivine rapier\n1\nn\nnam\ntma\n911\n3\n0" | ./run_file.sh  shell=True  cwd=/root/Bao/cpp/test/ 
+    ${proc6}   Run Process  echo -n "6\n123\ndivine rapier\n1\nn\nnam\ntma\n911\n3\n0" | ./run_file.sh  shell=True   
         ...    stdout=/root/Bao/auto/ex1/result.txt     
         ...    stdin=PIPE
         ...    timeout=5
+        ...    cwd=/root/Bao/cpp/test/
     ${result6}    Check customer's order list after making a new order    ./result.txt    nam
     Should Be Equal As Strings    ${result6}   Found the new order ID in customer's order list

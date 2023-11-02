@@ -4,7 +4,6 @@ Library    OperatingSystem
 Library    oop.py     ${CURDIR}/result.txt    ${CURDIR}/conv.txt     WITH NAME     lib  
 *** Variables ***
 @{filename}=    ./result.txt       ./conv.txt    #./resultmp.txt
-
 #*** Tasks ***
 *** Comments ***
 *** Keywords ***    

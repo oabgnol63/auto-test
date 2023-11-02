@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231102 07:05:35.960" rpa="false" schemaversion="4">
-<suite id="s1" name="Ex1" source="/root/Bao/auto/ex1/ex1.robot">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231102 09:09:31.648" rpa="false" schemaversion="4">
+<suite id="s1" name="DeMiTestChoMaXem" source="/root/Bao/auto/ex1/ex1.robot">
 <kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Log To Console</arg>
 <arg>\nTest Suite Setup.....\n\n------------------------------------------------------------------------------</arg>
@@ -11,15 +11,15 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nTest Suite Setup.....\n\n------------------------------------------------------------------------------</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231102 07:05:36.057" endtime="20231102 07:05:36.057"/>
+<status status="PASS" starttime="20231102 09:09:31.756" endtime="20231102 09:09:31.757"/>
 </kw>
 <kw name="Create File" library="OperatingSystem">
 <arg>./conv.txt</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<msg timestamp="20231102 07:05:36.058" level="INFO" html="true">Created file '&lt;a href="file:///root/Bao/auto/ex1/conv.txt"&gt;/root/Bao/auto/ex1/conv.txt&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20231102 07:05:36.057" endtime="20231102 07:05:36.058"/>
+<msg timestamp="20231102 09:09:31.758" level="INFO" html="true">Created file '&lt;a href="file:///root/Bao/auto/ex1/conv.txt"&gt;/root/Bao/auto/ex1/conv.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20231102 09:09:31.758" endtime="20231102 09:09:31.758"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:36.056" endtime="20231102 07:05:36.058"/>
+<status status="PASS" starttime="20231102 09:09:31.756" endtime="20231102 09:09:31.759"/>
 </kw>
 <test id="s1-t1" name="Verify &lt;New item&gt; Function With Valid Input Set" line="19">
 <kw name="Run Process" library="Process">
@@ -30,23 +30,31 @@
 <arg>stdin=PIPE</arg>
 <arg>stdout=/root/Bao/auto/ex1/result.txt</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20231102 07:05:36.068" level="INFO">Starting process:
+<msg timestamp="20231102 09:09:31.763" level="INFO">Starting process:
 echo -n "2
 etheral blade
 100
 850000
 4
 0" | ./run_file.sh</msg>
-<msg timestamp="20231102 07:05:36.080" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20231102 07:05:36.866" level="INFO">Process completed.</msg>
-<msg timestamp="20231102 07:05:36.867" level="INFO">${test1} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20231102 07:05:36.060" endtime="20231102 07:05:36.867"/>
+<msg timestamp="20231102 09:09:31.764" level="DEBUG">Process configuration:
+cwd:     /root/Bao/cpp/test
+shell:   True
+stdout:  /root/Bao/auto/ex1/result.txt
+stderr:  PIPE
+stdin:   PIPE
+alias:   None
+env:     None</msg>
+<msg timestamp="20231102 09:09:31.770" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231102 09:09:32.927" level="INFO">Process completed.</msg>
+<msg timestamp="20231102 09:09:32.928" level="INFO">${test1} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20231102 09:09:31.761" endtime="20231102 09:09:32.928"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${test1.stdout.strip()}</arg>
 <arg>etheral blade</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20231102 07:05:36.868" endtime="20231102 07:05:36.870"/>
+<status status="PASS" starttime="20231102 09:09:32.929" endtime="20231102 09:09:32.932"/>
 </kw>
 <kw name="Run Keyword" library="BuiltIn" type="TEARDOWN">
 <arg>Empty All Files</arg>
@@ -60,28 +68,28 @@ etheral blade
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:36.873" endtime="20231102 07:05:36.878"/>
+<status status="PASS" starttime="20231102 09:09:32.937" endtime="20231102 09:09:32.938"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:36.873" endtime="20231102 07:05:36.879"/>
+<status status="PASS" starttime="20231102 09:09:32.936" endtime="20231102 09:09:32.938"/>
 </iter>
 <iter>
 <var name="${element}">./conv.txt</var>
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:36.879" endtime="20231102 07:05:36.880"/>
+<status status="PASS" starttime="20231102 09:09:32.939" endtime="20231102 09:09:32.940"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:36.879" endtime="20231102 07:05:36.880"/>
+<status status="PASS" starttime="20231102 09:09:32.938" endtime="20231102 09:09:32.940"/>
 </iter>
-<status status="PASS" starttime="20231102 07:05:36.872" endtime="20231102 07:05:36.880"/>
+<status status="PASS" starttime="20231102 09:09:32.935" endtime="20231102 09:09:32.940"/>
 </for>
-<status status="PASS" starttime="20231102 07:05:36.871" endtime="20231102 07:05:36.880"/>
+<status status="PASS" starttime="20231102 09:09:32.934" endtime="20231102 09:09:32.941"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:36.871" endtime="20231102 07:05:36.880"/>
+<status status="PASS" starttime="20231102 09:09:32.933" endtime="20231102 09:09:32.941"/>
 </kw>
 <doc>Insert a new item (1) -- Expect &lt;List all items&gt; contains the new-created item.</doc>
 <tag>test1</tag>
-<status status="PASS" starttime="20231102 07:05:36.059" endtime="20231102 07:05:36.880"/>
+<status status="PASS" starttime="20231102 09:09:31.759" endtime="20231102 09:09:32.941"/>
 </test>
 <test id="s1-t2" name="Verify &lt;New customer&gt; Function With Valid Input Set" line="26">
 <kw name="Run Process" library="Process">
@@ -93,12 +101,20 @@ etheral blade
 <arg>stdin=/root/Bao/auto/ex1/input2.txt</arg>
 <arg>timeout=1</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20231102 07:05:36.890" level="INFO">Starting process:
+<msg timestamp="20231102 09:09:32.945" level="INFO">Starting process:
 ./mainApp</msg>
-<msg timestamp="20231102 07:05:36.908" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20231102 07:05:37.109" level="INFO">Process completed.</msg>
-<msg timestamp="20231102 07:05:37.110" level="INFO">${proc2} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20231102 07:05:36.889" endtime="20231102 07:05:37.110"/>
+<msg timestamp="20231102 09:09:32.945" level="DEBUG">Process configuration:
+cwd:     /root/Bao/cpp/test/build
+shell:   True
+stdout:  /root/Bao/auto/ex1/result.txt
+stderr:  PIPE
+stdin:   /root/Bao/auto/ex1/input2.txt
+alias:   None
+env:     None</msg>
+<msg timestamp="20231102 09:09:32.953" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231102 09:09:33.154" level="INFO">Process completed.</msg>
+<msg timestamp="20231102 09:09:33.155" level="INFO">${proc2} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20231102 09:09:32.944" endtime="20231102 09:09:33.155"/>
 </kw>
 <kw name="Check customers list after adding new customers" library="ex1_2">
 <var>${result2}</var>
@@ -106,29 +122,29 @@ etheral blade
 <arg>./conv.txt</arg>
 <kw name="Match Regex Customer" library="lib">
 <doc>Find all customer's info in ``ifile``, then write to ``ofile``</doc>
-<status status="PASS" starttime="20231102 07:05:37.112" endtime="20231102 07:05:37.114"/>
+<status status="PASS" starttime="20231102 09:09:33.158" endtime="20231102 09:09:33.164"/>
 </kw>
 <kw name="Verify Customer Output" library="lib">
 <var>${ver}</var>
 <doc>Verify the output ``ofile`` of ``List all customers`` function after adding some new customers. </doc>
-<msg timestamp="20231102 07:05:37.116" level="INFO">${ver} = 4</msg>
-<status status="PASS" starttime="20231102 07:05:37.114" endtime="20231102 07:05:37.116"/>
+<msg timestamp="20231102 09:09:33.170" level="INFO">${ver} = 4</msg>
+<status status="PASS" starttime="20231102 09:09:33.165" endtime="20231102 09:09:33.171"/>
 </kw>
 <return>
 <value>${ver}</value>
-<status status="PASS" starttime="20231102 07:05:37.116" endtime="20231102 07:05:37.117"/>
+<status status="PASS" starttime="20231102 09:09:33.172" endtime="20231102 09:09:33.172"/>
 </return>
-<msg timestamp="20231102 07:05:37.117" level="INFO">${result2} = 4</msg>
-<status status="PASS" starttime="20231102 07:05:37.111" endtime="20231102 07:05:37.117"/>
+<msg timestamp="20231102 09:09:33.173" level="INFO">${result2} = 4</msg>
+<status status="PASS" starttime="20231102 09:09:33.156" endtime="20231102 09:09:33.178"/>
 </kw>
 <kw name="Should Be Equal As Integers" library="BuiltIn">
 <arg>${result2}</arg>
 <arg>4</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<msg timestamp="20231102 07:05:37.118" level="INFO">Argument types are:
+<msg timestamp="20231102 09:09:33.180" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20231102 07:05:37.117" endtime="20231102 07:05:37.127"/>
+<status status="PASS" starttime="20231102 09:09:33.179" endtime="20231102 09:09:33.180"/>
 </kw>
 <kw name="Run Keyword" library="BuiltIn" type="TEARDOWN">
 <arg>Empty All Files</arg>
@@ -142,28 +158,28 @@ etheral blade
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:37.130" endtime="20231102 07:05:37.131"/>
+<status status="PASS" starttime="20231102 09:09:33.185" endtime="20231102 09:09:33.188"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.130" endtime="20231102 07:05:37.131"/>
+<status status="PASS" starttime="20231102 09:09:33.183" endtime="20231102 09:09:33.189"/>
 </iter>
 <iter>
 <var name="${element}">./conv.txt</var>
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:37.131" endtime="20231102 07:05:37.132"/>
+<status status="PASS" starttime="20231102 09:09:33.189" endtime="20231102 09:09:33.196"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.131" endtime="20231102 07:05:37.132"/>
+<status status="PASS" starttime="20231102 09:09:33.189" endtime="20231102 09:09:33.196"/>
 </iter>
-<status status="PASS" starttime="20231102 07:05:37.129" endtime="20231102 07:05:37.132"/>
+<status status="PASS" starttime="20231102 09:09:33.183" endtime="20231102 09:09:33.196"/>
 </for>
-<status status="PASS" starttime="20231102 07:05:37.129" endtime="20231102 07:05:37.132"/>
+<status status="PASS" starttime="20231102 09:09:33.182" endtime="20231102 09:09:33.197"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.128" endtime="20231102 07:05:37.132"/>
+<status status="PASS" starttime="20231102 09:09:33.181" endtime="20231102 09:09:33.197"/>
 </kw>
 <doc>Insert new customers (2) -- Expect &lt;List all customers&gt; contains the new-created customers.</doc>
 <tag>test2</tag>
-<status status="PASS" starttime="20231102 07:05:36.881" endtime="20231102 07:05:37.132"/>
+<status status="PASS" starttime="20231102 09:09:32.942" endtime="20231102 09:09:33.197"/>
 </test>
 <test id="s1-t3" name="Verify &lt;New customer&gt; Function With Wrong Info" line="37">
 <kw name="Run Process" library="Process">
@@ -175,17 +191,25 @@ etheral blade
 <arg>stdin=PIPE</arg>
 <arg>timeout=1</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20231102 07:05:37.145" level="INFO">Starting process:
+<msg timestamp="20231102 09:09:33.201" level="INFO">Starting process:
 echo -n "1
 bao
  
 911
 3
 0" | ./mainApp</msg>
-<msg timestamp="20231102 07:05:37.161" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20231102 07:05:37.262" level="INFO">Process completed.</msg>
-<msg timestamp="20231102 07:05:37.263" level="INFO">${proc3} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20231102 07:05:37.134" endtime="20231102 07:05:37.263"/>
+<msg timestamp="20231102 09:09:33.202" level="DEBUG">Process configuration:
+cwd:     /root/Bao/cpp/test/build
+shell:   True
+stdout:  /root/Bao/auto/ex1/result.txt
+stderr:  PIPE
+stdin:   PIPE
+alias:   None
+env:     None</msg>
+<msg timestamp="20231102 09:09:33.234" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231102 09:09:33.336" level="INFO">Process completed.</msg>
+<msg timestamp="20231102 09:09:33.336" level="INFO">${proc3} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20231102 09:09:33.200" endtime="20231102 09:09:33.337"/>
 </kw>
 <kw name="Check customers list after adding new customers" library="ex1_2">
 <var>${result3}</var>
@@ -193,35 +217,35 @@ bao
 <arg>./conv.txt</arg>
 <kw name="Match Regex Customer" library="lib">
 <doc>Find all customer's info in ``ifile``, then write to ``ofile``</doc>
-<status status="PASS" starttime="20231102 07:05:37.265" endtime="20231102 07:05:37.266"/>
+<status status="PASS" starttime="20231102 09:09:33.339" endtime="20231102 09:09:33.341"/>
 </kw>
 <kw name="Verify Customer Output" library="lib">
 <var>${ver}</var>
 <doc>Verify the output ``ofile`` of ``List all customers`` function after adding some new customers. </doc>
-<msg timestamp="20231102 07:05:37.267" level="INFO">${ver} = Fail at Address field - profile 1
+<msg timestamp="20231102 09:09:33.342" level="INFO">${ver} = Fail at Address field - profile 1
 Actual value: "Address:"
 Expect value: non empty letter sequence</msg>
-<status status="PASS" starttime="20231102 07:05:37.266" endtime="20231102 07:05:37.267"/>
+<status status="PASS" starttime="20231102 09:09:33.341" endtime="20231102 09:09:33.342"/>
 </kw>
 <return>
 <value>${ver}</value>
-<status status="PASS" starttime="20231102 07:05:37.267" endtime="20231102 07:05:37.267"/>
+<status status="PASS" starttime="20231102 09:09:33.348" endtime="20231102 09:09:33.348"/>
 </return>
-<msg timestamp="20231102 07:05:37.268" level="INFO">${result3} = Fail at Address field - profile 1
+<msg timestamp="20231102 09:09:33.350" level="INFO">${result3} = Fail at Address field - profile 1
 Actual value: "Address:"
 Expect value: non empty letter sequence</msg>
-<status status="PASS" starttime="20231102 07:05:37.264" endtime="20231102 07:05:37.268"/>
+<status status="PASS" starttime="20231102 09:09:33.338" endtime="20231102 09:09:33.351"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\n\n${result3}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231102 07:05:37.268" endtime="20231102 07:05:37.272"/>
+<status status="PASS" starttime="20231102 09:09:33.351" endtime="20231102 09:09:33.352"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${result3}</arg>
 <arg>Fail at Address field</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20231102 07:05:37.272" endtime="20231102 07:05:37.272"/>
+<status status="PASS" starttime="20231102 09:09:33.354" endtime="20231102 09:09:33.355"/>
 </kw>
 <kw name="Run Keyword" library="BuiltIn" type="TEARDOWN">
 <arg>Empty All Files</arg>
@@ -235,28 +259,28 @@ Expect value: non empty letter sequence</msg>
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:37.274" endtime="20231102 07:05:37.280"/>
+<status status="PASS" starttime="20231102 09:09:33.363" endtime="20231102 09:09:33.370"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.274" endtime="20231102 07:05:37.280"/>
+<status status="PASS" starttime="20231102 09:09:33.362" endtime="20231102 09:09:33.371"/>
 </iter>
 <iter>
 <var name="${element}">./conv.txt</var>
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:37.280" endtime="20231102 07:05:37.281"/>
+<status status="PASS" starttime="20231102 09:09:33.372" endtime="20231102 09:09:33.373"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.280" endtime="20231102 07:05:37.281"/>
+<status status="PASS" starttime="20231102 09:09:33.371" endtime="20231102 09:09:33.373"/>
 </iter>
-<status status="PASS" starttime="20231102 07:05:37.273" endtime="20231102 07:05:37.281"/>
+<status status="PASS" starttime="20231102 09:09:33.362" endtime="20231102 09:09:33.374"/>
 </for>
-<status status="PASS" starttime="20231102 07:05:37.273" endtime="20231102 07:05:37.281"/>
+<status status="PASS" starttime="20231102 09:09:33.361" endtime="20231102 09:09:33.374"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.273" endtime="20231102 07:05:37.281"/>
+<status status="PASS" starttime="20231102 09:09:33.357" endtime="20231102 09:09:33.376"/>
 </kw>
 <doc>Insert new customers (2) with empty &lt;Addres&gt; -- Expect return "Fail at Address field"</doc>
 <tag>test3</tag>
-<status status="PASS" starttime="20231102 07:05:37.133" endtime="20231102 07:05:37.281"/>
+<status status="PASS" starttime="20231102 09:09:33.199" endtime="20231102 09:09:33.377"/>
 </test>
 <test id="s1-t4" name="Verify &lt;Make a new order&gt; Function With Invalid Input Set" line="48">
 <kw name="Run Process" library="Process">
@@ -268,21 +292,29 @@ Expect value: non empty letter sequence</msg>
 <arg>stdin=PIPE</arg>
 <arg>timeout=1</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20231102 07:05:37.288" level="INFO">Starting process:
+<msg timestamp="20231102 09:09:33.391" level="INFO">Starting process:
 echo -n "6
 123
 iphone
 0" | ./mainApp</msg>
-<msg timestamp="20231102 07:05:37.310" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20231102 07:05:37.411" level="INFO">Process completed.</msg>
-<msg timestamp="20231102 07:05:37.412" level="INFO">${proc4} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20231102 07:05:37.285" endtime="20231102 07:05:37.412"/>
+<msg timestamp="20231102 09:09:33.391" level="DEBUG">Process configuration:
+cwd:     /root/Bao/cpp/test/build
+shell:   True
+stdout:  /root/Bao/auto/ex1/result.txt
+stderr:  PIPE
+stdin:   PIPE
+alias:   None
+env:     None</msg>
+<msg timestamp="20231102 09:09:33.411" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231102 09:09:33.512" level="INFO">Process completed.</msg>
+<msg timestamp="20231102 09:09:33.513" level="INFO">${proc4} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20231102 09:09:33.384" endtime="20231102 09:09:33.513"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${proc4.stdout.strip()}</arg>
 <arg>Item not exits</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20231102 07:05:37.412" endtime="20231102 07:05:37.414"/>
+<status status="PASS" starttime="20231102 09:09:33.514" endtime="20231102 09:09:33.516"/>
 </kw>
 <kw name="Run Keyword" library="BuiltIn" type="TEARDOWN">
 <arg>Empty All Files</arg>
@@ -296,24 +328,24 @@ iphone
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:37.416" endtime="20231102 07:05:37.418"/>
+<status status="PASS" starttime="20231102 09:09:33.522" endtime="20231102 09:09:33.524"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.416" endtime="20231102 07:05:37.419"/>
+<status status="PASS" starttime="20231102 09:09:33.521" endtime="20231102 09:09:33.525"/>
 </iter>
 <iter>
 <var name="${element}">./conv.txt</var>
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:37.419" endtime="20231102 07:05:37.422"/>
+<status status="PASS" starttime="20231102 09:09:33.530" endtime="20231102 09:09:33.531"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.419" endtime="20231102 07:05:37.422"/>
+<status status="PASS" starttime="20231102 09:09:33.530" endtime="20231102 09:09:33.532"/>
 </iter>
-<status status="PASS" starttime="20231102 07:05:37.416" endtime="20231102 07:05:37.422"/>
+<status status="PASS" starttime="20231102 09:09:33.521" endtime="20231102 09:09:33.532"/>
 </for>
-<status status="PASS" starttime="20231102 07:05:37.415" endtime="20231102 07:05:37.422"/>
+<status status="PASS" starttime="20231102 09:09:33.518" endtime="20231102 09:09:33.532"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:37.415" endtime="20231102 07:05:37.422"/>
+<status status="PASS" starttime="20231102 09:09:33.517" endtime="20231102 09:09:33.532"/>
 </kw>
 <doc>Insert new orders (6) -- Make an order with not available item -- Expect message "Item not exits"
 Step       |  Input
@@ -325,7 +357,7 @@ Select (6) |  Type Customer's ID (number only): 123
 &lt;console&gt;  |  Expect logging to console:  "Item not exits"
 Select (0) |  Exit program</doc>
 <tag>test4</tag>
-<status status="PASS" starttime="20231102 07:05:37.282" endtime="20231102 07:05:37.422"/>
+<status status="PASS" starttime="20231102 09:09:33.379" endtime="20231102 09:09:33.533"/>
 </test>
 <test id="s1-t5" name="Verify &lt;Make a new order&gt; Function With Invalid Input Set 2" line="65">
 <kw name="Run Process" library="Process">
@@ -337,7 +369,7 @@ Select (0) |  Exit program</doc>
 <arg>stdin=PIPE</arg>
 <arg>timeout=5</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20231102 07:05:37.427" level="INFO">Starting process:
+<msg timestamp="20231102 09:09:33.544" level="INFO">Starting process:
 echo -n "2
 etheral blade
 10
@@ -347,16 +379,24 @@ etheral blade
 etheral blade
 101
 0" | ./run_file.sh</msg>
-<msg timestamp="20231102 07:05:37.446" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20231102 07:05:38.348" level="INFO">Process completed.</msg>
-<msg timestamp="20231102 07:05:38.349" level="INFO">${proc5} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20231102 07:05:37.426" endtime="20231102 07:05:38.349"/>
+<msg timestamp="20231102 09:09:33.545" level="DEBUG">Process configuration:
+cwd:     /root/Bao/cpp/test
+shell:   True
+stdout:  /root/Bao/auto/ex1/result.txt
+stderr:  PIPE
+stdin:   PIPE
+alias:   None
+env:     None</msg>
+<msg timestamp="20231102 09:09:33.563" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231102 09:09:34.365" level="INFO">Process completed.</msg>
+<msg timestamp="20231102 09:09:34.366" level="INFO">${proc5} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20231102 09:09:33.542" endtime="20231102 09:09:34.366"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${proc5.stdout.strip()}</arg>
 <arg>Item etheral blade have only 10 in stock</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20231102 07:05:38.350" endtime="20231102 07:05:38.352"/>
+<status status="PASS" starttime="20231102 09:09:34.368" endtime="20231102 09:09:34.370"/>
 </kw>
 <kw name="Run Keyword" library="BuiltIn" type="TEARDOWN">
 <arg>Empty All Files</arg>
@@ -370,24 +410,24 @@ etheral blade
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:38.355" endtime="20231102 07:05:38.355"/>
+<status status="PASS" starttime="20231102 09:09:34.381" endtime="20231102 09:09:34.382"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:38.354" endtime="20231102 07:05:38.355"/>
+<status status="PASS" starttime="20231102 09:09:34.380" endtime="20231102 09:09:34.382"/>
 </iter>
 <iter>
 <var name="${element}">./conv.txt</var>
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:38.356" endtime="20231102 07:05:38.356"/>
+<status status="PASS" starttime="20231102 09:09:34.383" endtime="20231102 09:09:34.384"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:38.355" endtime="20231102 07:05:38.356"/>
+<status status="PASS" starttime="20231102 09:09:34.382" endtime="20231102 09:09:34.385"/>
 </iter>
-<status status="PASS" starttime="20231102 07:05:38.354" endtime="20231102 07:05:38.356"/>
+<status status="PASS" starttime="20231102 09:09:34.373" endtime="20231102 09:09:34.385"/>
 </for>
-<status status="PASS" starttime="20231102 07:05:38.353" endtime="20231102 07:05:38.361"/>
+<status status="PASS" starttime="20231102 09:09:34.372" endtime="20231102 09:09:34.385"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:38.353" endtime="20231102 07:05:38.361"/>
+<status status="PASS" starttime="20231102 09:09:34.371" endtime="20231102 09:09:34.386"/>
 </kw>
 <doc>Make a new orders (6) with invalid input &lt;quantities&gt; -- Expect message "Item x have only y in stock"
 Step       |  Input
@@ -404,19 +444,19 @@ Select (6) |  Type Customer's ID (number only): 123
 &lt;console&gt;  |  Expect logging to console:  "Item /etheral blade/ have only /10/ in stock"
 Select (0) |  Exit program</doc>
 <tag>test5</tag>
-<status status="PASS" starttime="20231102 07:05:37.423" endtime="20231102 07:05:38.361"/>
+<status status="PASS" starttime="20231102 09:09:33.534" endtime="20231102 09:09:34.386"/>
 </test>
 <test id="s1-t6" name="Verify &lt;Make a new order&gt; Function With Valid Input Set" line="88">
 <kw name="Run Process" library="Process">
 <var>${proc6}</var>
 <arg>echo -n "6\n123\ndivine rapier\n1\nn\nnam\ntma\n911\n3\n0" | ./run_file.sh</arg>
 <arg>shell=True</arg>
-<arg>cwd=/root/Bao/cpp/test/</arg>
 <arg>stdout=/root/Bao/auto/ex1/result.txt</arg>
 <arg>stdin=PIPE</arg>
 <arg>timeout=5</arg>
+<arg>cwd=/root/Bao/cpp/test/</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20231102 07:05:38.367" level="INFO">Starting process:
+<msg timestamp="20231102 09:09:34.404" level="INFO">Starting process:
 echo -n "6
 123
 divine rapier
@@ -427,10 +467,18 @@ tma
 911
 3
 0" | ./run_file.sh</msg>
-<msg timestamp="20231102 07:05:38.386" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20231102 07:05:39.689" level="INFO">Process completed.</msg>
-<msg timestamp="20231102 07:05:39.690" level="INFO">${proc6} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20231102 07:05:38.366" endtime="20231102 07:05:39.690"/>
+<msg timestamp="20231102 09:09:34.404" level="DEBUG">Process configuration:
+cwd:     /root/Bao/cpp/test
+shell:   True
+stdout:  /root/Bao/auto/ex1/result.txt
+stderr:  PIPE
+stdin:   PIPE
+alias:   None
+env:     None</msg>
+<msg timestamp="20231102 09:09:34.426" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20231102 09:09:35.429" level="INFO">Process completed.</msg>
+<msg timestamp="20231102 09:09:35.430" level="INFO">${proc6} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20231102 09:09:34.403" endtime="20231102 09:09:35.430"/>
 </kw>
 <kw name="Check customer's order list after making a new order" library="ex1_2">
 <var>${result6}</var>
@@ -443,21 +491,24 @@ tma
 <doc>Search for the Order's Assigned ID in ``file name`` after making an order. 
 Then search for ``Order list`` of the customer that have just made this order
 and verify that the ``Order's Assigned ID`` now has been in the customer's ``Order list``</doc>
-<msg timestamp="20231102 07:05:39.693" level="INFO">${ver} = Found the new order ID in customer's order list</msg>
-<status status="PASS" starttime="20231102 07:05:39.692" endtime="20231102 07:05:39.694"/>
+<msg timestamp="20231102 09:09:35.436" level="INFO">${ver} = Found the new order ID in customer's order list</msg>
+<status status="PASS" starttime="20231102 09:09:35.433" endtime="20231102 09:09:35.436"/>
 </kw>
 <return>
 <value>${ver}</value>
-<status status="PASS" starttime="20231102 07:05:39.694" endtime="20231102 07:05:39.694"/>
+<status status="PASS" starttime="20231102 09:09:35.436" endtime="20231102 09:09:35.440"/>
 </return>
-<msg timestamp="20231102 07:05:39.694" level="INFO">${result6} = Found the new order ID in customer's order list</msg>
-<status status="PASS" starttime="20231102 07:05:39.691" endtime="20231102 07:05:39.694"/>
+<msg timestamp="20231102 09:09:35.441" level="INFO">${result6} = Found the new order ID in customer's order list</msg>
+<status status="PASS" starttime="20231102 09:09:35.432" endtime="20231102 09:09:35.441"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${result6}</arg>
 <arg>Found the new order ID in customer's order list</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20231102 07:05:39.694" endtime="20231102 07:05:39.695"/>
+<msg timestamp="20231102 09:09:35.448" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231102 09:09:35.441" endtime="20231102 09:09:35.448"/>
 </kw>
 <kw name="Run Keyword" library="BuiltIn" type="TEARDOWN">
 <arg>Empty All Files</arg>
@@ -471,24 +522,24 @@ and verify that the ``Order's Assigned ID`` now has been in the customer's ``Ord
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:39.698" endtime="20231102 07:05:39.703"/>
+<status status="PASS" starttime="20231102 09:09:35.452" endtime="20231102 09:09:35.453"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:39.698" endtime="20231102 07:05:39.703"/>
+<status status="PASS" starttime="20231102 09:09:35.451" endtime="20231102 09:09:35.453"/>
 </iter>
 <iter>
 <var name="${element}">./conv.txt</var>
 <kw name="Empty File" library="lib">
 <arg>${element}</arg>
 <doc>Clear content of ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:39.704" endtime="20231102 07:05:39.705"/>
+<status status="PASS" starttime="20231102 09:09:35.454" endtime="20231102 09:09:35.457"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:39.704" endtime="20231102 07:05:39.705"/>
+<status status="PASS" starttime="20231102 09:09:35.453" endtime="20231102 09:09:35.462"/>
 </iter>
-<status status="PASS" starttime="20231102 07:05:39.698" endtime="20231102 07:05:39.705"/>
+<status status="PASS" starttime="20231102 09:09:35.451" endtime="20231102 09:09:35.462"/>
 </for>
-<status status="PASS" starttime="20231102 07:05:39.697" endtime="20231102 07:05:39.705"/>
+<status status="PASS" starttime="20231102 09:09:35.450" endtime="20231102 09:09:35.463"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:39.697" endtime="20231102 07:05:39.705"/>
+<status status="PASS" starttime="20231102 09:09:35.449" endtime="20231102 09:09:35.463"/>
 </kw>
 <doc>Make a new orders (6) with valid input -- Expect info is saved successfully
 Step       |  Input
@@ -510,14 +561,14 @@ Select (6) |  Type Customer's ID (number only): 123
 Select (3) |  Expect this customer will be listed with &lt;List all customers&gt;, and /Order list/ includes new generated order's ID
 Select (0) |  Exit program</doc>
 <tag>test6</tag>
-<status status="PASS" starttime="20231102 07:05:38.362" endtime="20231102 07:05:39.705"/>
+<status status="PASS" starttime="20231102 09:09:34.390" endtime="20231102 09:09:35.463"/>
 </test>
 <kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
 <arg>Terminate All Processes</arg>
 <arg>kill=True</arg>
 <arg>AND</arg>
 <arg>Log to Console</arg>
-<arg>\nComment out @{filename} at &lt;ex1.resource&gt; to read the output file\n</arg>
+<arg>\nComment out @{filename} file at Resource to read the output file\n</arg>
 <arg>AND</arg>
 <arg>Delete All Files</arg>
 <arg>AND</arg>
@@ -527,12 +578,12 @@ Select (0) |  Exit program</doc>
 <kw name="Terminate All Processes" library="Process">
 <arg>kill=True</arg>
 <doc>Terminates all still running processes started by this library.</doc>
-<status status="PASS" starttime="20231102 07:05:39.709" endtime="20231102 07:05:39.709"/>
+<status status="PASS" starttime="20231102 09:09:35.473" endtime="20231102 09:09:35.474"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>\nComment out @{filename} at &lt;ex1.resource&gt; to read the output file\n</arg>
+<arg>\nComment out @{filename} file at Resource to read the output file\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231102 07:05:39.710" endtime="20231102 07:05:39.716"/>
+<status status="PASS" starttime="20231102 09:09:35.475" endtime="20231102 09:09:35.476"/>
 </kw>
 <kw name="Delete All Files" library="ex1_2">
 <for flavor="IN">
@@ -543,31 +594,32 @@ Select (0) |  Exit program</doc>
 <kw name="Delete File" library="lib">
 <arg>${element}</arg>
 <doc>Delete ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:39.717" endtime="20231102 07:05:39.718"/>
+<status status="PASS" starttime="20231102 09:09:35.482" endtime="20231102 09:09:35.483"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:39.717" endtime="20231102 07:05:39.718"/>
+<status status="PASS" starttime="20231102 09:09:35.481" endtime="20231102 09:09:35.483"/>
 </iter>
 <iter>
 <var name="${element}">./conv.txt</var>
 <kw name="Delete File" library="lib">
 <arg>${element}</arg>
 <doc>Delete ``filename`` </doc>
-<status status="PASS" starttime="20231102 07:05:39.718" endtime="20231102 07:05:39.719"/>
+<status status="PASS" starttime="20231102 09:09:35.484" endtime="20231102 09:09:35.485"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:39.718" endtime="20231102 07:05:39.720"/>
+<status status="PASS" starttime="20231102 09:09:35.484" endtime="20231102 09:09:35.485"/>
 </iter>
-<status status="PASS" starttime="20231102 07:05:39.716" endtime="20231102 07:05:39.720"/>
+<status status="PASS" starttime="20231102 09:09:35.477" endtime="20231102 09:09:35.485"/>
 </for>
-<status status="PASS" starttime="20231102 07:05:39.716" endtime="20231102 07:05:39.720"/>
+<status status="PASS" starttime="20231102 09:09:35.476" endtime="20231102 09:09:35.493"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Test Suite Teardown.....\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231102 07:05:39.721" endtime="20231102 07:05:39.722"/>
+<status status="PASS" starttime="20231102 09:09:35.494" endtime="20231102 09:09:35.495"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:39.708" endtime="20231102 07:05:39.722"/>
+<status status="PASS" starttime="20231102 09:09:35.467" endtime="20231102 09:09:35.495"/>
 </kw>
-<status status="PASS" starttime="20231102 07:05:35.962" endtime="20231102 07:05:39.722"/>
+<doc>This is Documentation for ex1.robot test file</doc>
+<status status="PASS" starttime="20231102 09:09:31.650" endtime="20231102 09:09:35.495"/>
 </suite>
 <statistics>
 <total>
@@ -582,7 +634,7 @@ Select (0) |  Exit program</doc>
 <stat pass="1" fail="0" skip="0">test6</stat>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Ex1">Ex1</stat>
+<stat pass="6" fail="0" skip="0" id="s1" name="DeMiTestChoMaXem">DeMiTestChoMaXem</stat>
 </suite>
 </statistics>
 <errors>
