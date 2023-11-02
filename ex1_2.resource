@@ -1,7 +1,7 @@
 *** Settings ***
 Library    Process
 Library    OperatingSystem 
-Library    conv.py        
+Library    oop.py     ${CURDIR}/result.txt    ${CURDIR}/conv.txt     WITH NAME     lib  
 *** Variables ***
 @{filename}=    ./result.txt       ./conv.txt    #./resultmp.txt
 
@@ -10,21 +10,21 @@ Library    conv.py
 *** Keywords ***    
 Delete All Files
     FOR    ${element}    IN    @{filename}
-        Delete File    ${element}
+        lib.Delete File    ${element}
     END
 Empty All Files
     FOR    ${element}    IN    @{filename}
-        Empty File    ${element}    
+        lib.Empty File    ${element}    
     END
 Check customers list after adding new customers
     [Documentation] 
     [Arguments]    ${infile}    ${outfile}
-    Match Regex Customer    ${infile}    ${outfile} 
-    ${ver}    Verify Customer Output    ${outfile}
+    lib.Match Regex Customer    
+    ${ver}    lib.Verify Customer Output    
     RETURN  ${ver}
 
 Check customer's order list after making a new order
     [Documentation]    Alias Keyword for <Verify OrderID In Customer>
     [Arguments]    ${infile}    ${name}
-    ${ver}    Verify OrderID In Customer    ${infile}    ${name}
+    ${ver}    lib.Verify OrderID In Customer   nam
     RETURN    ${ver}

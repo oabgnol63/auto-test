@@ -42,7 +42,6 @@ def match_regex_customer (ifile,ofile):
         if match: 
             printft(num,num+7,ifile,ofile)
 
-@keyword
 def verify_customer_output(ofile):
     """Verify the output ``ofile`` of ``List all customers`` function after adding some new customers. 
 

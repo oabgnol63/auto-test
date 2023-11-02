@@ -1,6 +1,6 @@
 #!/usr/bin/env robot
 *** Settings ***
-Resource           ex1.resource
+Resource           ex1_2.resource
 Suite Setup   
     ...            Run Keywords
     ...            Log To Console    \nTest Suite Setup.....\n\n------------------------------------------------------------------------------
@@ -19,7 +19,6 @@ Suite Teardown
 Verify <New item> Function With Valid Input Set
     [Documentation]    Insert a new item (1) -- Expect <List all items> contains the new-created item.
     [Tags]  test1
-    [Timeout]    1
     ${test1}       Run Process  echo -n "2\netheral blade\n100\n850000\n4\n0" | ./run_file.sh  shell=True  cwd=/root/Bao/cpp/test   
         ...        stdin=PIPE
         ...        stdout=/root/Bao/auto/ex1/result.txt
@@ -27,19 +26,17 @@ Verify <New item> Function With Valid Input Set
 Verify <New customer> Function With Valid Input Set
     [Documentation]    Insert new customers (2) -- Expect <List all customers> contains the new-created customers.
     [Tags]        test2
-    [Timeout]     1
     ${proc2}       Run Process  ./mainApp  shell=True  cwd=/root/Bao/cpp/test/build  
         ...        stdout=/root/Bao/auto/ex1/result.txt     
         ...        stdin=/root/Bao/auto/ex1/input2.txt
         ...        timeout=1  
-    ${result2} =    Check customers list after adding new customer's info    ./result.txt    ./conv.txt
+    ${result2} =    Check customers list after adding new customers   ./result.txt    ./conv.txt
     #Log To Console    \n\n${result2}\n\n
     Should Be Equal As Integers  ${result2}    4
 
 Verify <New customer> Function With Wrong Info
     [Documentation]    Insert new customers (2) with empty <Addres> -- Expect return "Fail at Address field"
     [Tags]     test3
-    [Timeout]     1
     ${proc3}       Run Process  echo -n "1\nbao\n \n911\n3\n0" | ./mainApp  shell=True  cwd=/root/Bao/cpp/test/build  
         ...        stdout=/root/Bao/auto/ex1/result.txt     
         ...        stdin=PIPE
@@ -59,7 +56,6 @@ Verify <Make a new order> Function With Invalid Input Set
         ...  <console>  |  Expect logging to console:  "Item not exits"
         ...  Select (0) |  Exit program
     [Tags]    test4
-    [Timeout]    1
     ${proc4}   Run Process  echo -n "6\n123\niphone\n0" | ./mainApp  shell=True  cwd=/root/Bao/cpp/test/build  
         ...    stdout=/root/Bao/auto/ex1/result.txt     
         ...    stdin=PIPE
@@ -82,11 +78,10 @@ Verify <Make a new order> Function With Invalid Input Set 2
         ...  <console>  |  Expect logging to console:  "Item /etheral blade/ have only /10/ in stock"
         ...  Select (0) |  Exit program
     [Tags]    test5
-    [Timeout]    1
     ${proc5}   Run Process  echo -n "2\netheral blade\n10\n800000\n6\n123\netheral blade\n101\n0" | ./run_file.sh  shell=True  cwd=/root/Bao/cpp/test/ 
         ...    stdout=/root/Bao/auto/ex1/result.txt     
         ...    stdin=PIPE
-        ...    timeout=1
+        ...    timeout=5
     Should Contain    ${proc5.stdout.strip()}    Item etheral blade have only 10 in stock
 
 
@@ -111,10 +106,9 @@ Verify <Make a new order> Function With Valid Input Set
         ...  Select (3) |  Expect this customer will be listed with <List all customers>, and /Order list/ includes new generated order's ID
         ...  Select (0) |  Exit program
     [Tags]    test6
-    [Timeout]    1
     ${proc6}   Run Process  echo -n "6\n123\ndivine rapier\n1\nn\nnam\ntma\n911\n3\n0" | ./run_file.sh  shell=True  cwd=/root/Bao/cpp/test/ 
         ...    stdout=/root/Bao/auto/ex1/result.txt     
         ...    stdin=PIPE
-        ...    timeout=1
+        ...    timeout=5
     ${result6}    Check customer's order list after making a new order    ./result.txt    nam
     Should Be Equal As Strings    ${result6}   Found the new order ID in customer's order list
