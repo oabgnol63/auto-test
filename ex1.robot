@@ -11,20 +11,55 @@ Test Teardown
 Suite Teardown        
     ...            Run Keywords    
     ...            Terminate All Processes    kill=True    
-    ...     AND    Log to Console    \nComment out @{filename} file at Resource to read the output file\n  
+    ...     AND    Log to Console    \nComment out @{filename} file at Resource file to read the output file\n  
     ...     AND    Delete All Files 
     ...     AND    Log To Console    Test Suite Teardown.....\n
 
 *** Test Cases ***
 Verify <New item> Function With Valid Input Set
-    [Documentation]    Insert a new item (1) -- Expect <List all items> contains the new-created item.
+    [Documentation]    New item (2) -- Expect <List all items> contains the new-created item.
+        ...  Step       |  Input
+        ...  Select (1) |  Input item's name: etheral blade      #any 
+        ...             |  Input your address: 100               #any int
+        ...             |  Input your phone num: 850000          #any float
+        ...  ---------------------------------------------------------------------------------------
+        ...  Select (4) |  All items will be listed in console
+        ...  ---------------------------------------------------------------------------------------
+        ...  Select (0) |  Exit program
+        ...  ---------------------------------------------------------------------------------------
+        ...  ---------------------------------------------------------------------------------------
+        ...             |  Output
+        ...  ---------------------------------------------------------------------------------------
+        ...             |  Expected item /etheral blade/ is listed in console
+        ...  ---------------------------------------------------------------------------------------
     [Tags]  test1
     ${test1}       Run Process  echo -n "2\netheral blade\n100\n850000\n4\n0" | ./run_file.sh  shell=True  cwd=/root/Bao/cpp/test   
         ...        stdin=PIPE
         ...        stdout=/root/Bao/auto/ex1/result.txt
     Should Contain   ${test1.stdout.strip()}    etheral blade    
 Verify <New customer> Function With Valid Input Set
-    [Documentation]    Insert new customers (2) -- Expect <List all customers> contains the new-created customers.
+    [Documentation]    New customers (1) -- Expect <List all customers> contains the new-created customers.
+        ...  Step       |  Input
+        ...  Select (1) |  Input your name: bao          #any 
+        ...             |  Input your address: tma       #any
+        ...             |  Input your phone num: 911     #any number
+        ...             |  Repeat this step 3 more time
+        ...  ---------------------------------------------------------------------------------------
+        ...  Select (3) |  List of customers will be listed in console
+        ...  ---------------------------------------------------------------------------------------
+        ...  Select (0) |  Exit program
+        ...  ---------------------------------------------------------------------------------------
+        ...             |  Output
+        ...  ---------------------------------------------------------------------------------------
+        ...             |  Expect 4 just-added customers are listed in the output console, each has exacly format: 
+        ...             |              Name: any letter strings, can't be empty
+        ...             |              Address: any letter strings, can't be empty
+        ...             |              Phone num: number string, can't be empty
+        ...             |              Id: number string, can't be empty
+        ...             |              Ordered list: number strings, can be empty
+        ...             |              Total spent: float number, can be empty
+        ...             |              Rank: Bronze | Silver | Gold | Platimun, default is Bronze
+
     [Tags]        test2
     ${proc2}       Run Process  ./mainApp  shell=True  cwd=/root/Bao/cpp/test/build  
         ...        stdout=/root/Bao/auto/ex1/result.txt     
@@ -35,7 +70,21 @@ Verify <New customer> Function With Valid Input Set
     Should Be Equal As Integers  ${result2}    4
 
 Verify <New customer> Function With Wrong Info
-    [Documentation]    Insert new customers (2) with empty <Addres> -- Expect return "Fail at Address field"
+    [Documentation]    Insert new customers (1) with empty <Addres> -- Expect return "Fail at Address field"
+        ...  Step       |  Input
+        ...  Select (1) |  Input your name: bao          #any 
+        ...             |  Input your address:           #leave it blank
+        ...             |  Input your phone num:         #any number
+        ...  ---------------------------------------------------------------------------------------
+        ...  Select (3) |  List of customers will be listed in console
+        ...  ---------------------------------------------------------------------------------------
+        ...  Select (0) |  Exit program
+        ...  ---------------------------------------------------------------------------------------
+        ...             |  Output
+        ...   ---------------------------------------------------------------------------------------
+        ...             |  Expect test case detects the invalid field -- In this case, expect "Fail at Address field" 
+        ...             |  printed at test console
+        ...  ---------------------------------------------------------------------------------------
     [Tags]     test3
     ${proc3}       Run Process  echo -n "1\nbao\n \n911\n3\n0" | ./mainApp  shell=True  cwd=/root/Bao/cpp/test/build  
         ...        stdout=/root/Bao/auto/ex1/result.txt     
@@ -46,15 +95,16 @@ Verify <New customer> Function With Wrong Info
     Should Contain    ${result3}    Fail at Address field
 
 Verify <Make a new order> Function With Invalid Input Set
-    [Documentation]    Insert new orders (6) -- Make an order with not available item -- Expect message "Item not exits"
+    [Documentation]    Make a new orders (6) -- Make an order with not available item -- Expect message "Item not exits"
         ...  Step       |  Input
         ...  Select (6) |  Type Customer's ID (number only): 123      #any number
         ...             |  Type item's name: iphone 15                #any that's not valid
-        ...   ---------------------------------------------------------------------------------------
+        ...  ---------------------------------------------------------------------------------------
         ...             |  Output
-        ...   ---------------------------------------------------------------------------------------
+        ...  ---------------------------------------------------------------------------------------
         ...  <console>  |  Expect logging to console:  "Item not exits"
         ...  Select (0) |  Exit program
+        ...  ---------------------------------------------------------------------------------------
     [Tags]    test4
     ${proc4}   Run Process  echo -n "6\n123\niphone\n0" | ./mainApp  shell=True  cwd=/root/Bao/cpp/test/build  
         ...    stdout=/root/Bao/auto/ex1/result.txt     
@@ -72,11 +122,12 @@ Verify <Make a new order> Function With Invalid Input Set 2
         ...  Select (6) |  Type Customer's ID (number only): 123      #any number
         ...             |  Type item's name: etheral blade            #which is just added by (2)
         ...             |  Quantities: 101                            #any number that's larger than available value added by (2) (which is 10)
-        ...   ---------------------------------------------------------------------------------------
+        ...  ---------------------------------------------------------------------------------------
         ...             |  Output
-        ...   ---------------------------------------------------------------------------------------
+        ...  ---------------------------------------------------------------------------------------
         ...  <console>  |  Expect logging to console:  "Item /etheral blade/ have only /10/ in stock"
         ...  Select (0) |  Exit program
+        ...  ---------------------------------------------------------------------------------------
     [Tags]    test5
     ${proc5}   Run Process  echo -n "2\netheral blade\n10\n800000\n6\n123\netheral blade\n101\n0" | ./run_file.sh  shell=True  cwd=/root/Bao/cpp/test/ 
         ...    stdout=/root/Bao/auto/ex1/result.txt     
@@ -97,14 +148,18 @@ Verify <Make a new order> Function With Valid Input Set
         ...             |  Input your name: nam
         ...             |  Input your address: tma
         ...             |  Input your phone num: 911
-        ...   ---------------------------------------------------------------------------------------
-        ...             |  Output
-        ...   ---------------------------------------------------------------------------------------
+        ...   <console> |  ... 
         ...   <console> |  Assigned customer's ID: some number    #auto increment customer's Id, expected 2023002
         ...   <console> |  Assigned order's ID: some number       #auto generated order's Id 
         ...   <console> |  Total: 1000000.00                      #value of all bought items, < divine rapier -1000000 > in this case
+        ...   <console> |  ... 
+        ...  ---------------------------------------------------------------------------------------
+        ...             |  Output
+        ...  ---------------------------------------------------------------------------------------
         ...  Select (3) |  Expect this customer will be listed with <List all customers>, and /Order list/ includes new generated order's ID
+        ...  --------------------------------------------------------------------------------------- 
         ...  Select (0) |  Exit program
+        ...  ---------------------------------------------------------------------------------------
     [Tags]    test6
     ${proc6}   Run Process  echo -n "6\n123\ndivine rapier\n1\nn\nnam\ntma\n911\n3\n0" | ./run_file.sh  shell=True   
         ...    stdout=/root/Bao/auto/ex1/result.txt     

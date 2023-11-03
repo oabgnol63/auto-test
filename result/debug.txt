@@ -1,25 +1,25 @@
 ==============================================================================
-20231102 09:09:31.755 - INFO - + START SUITE: DeMiTestChoMaXem [ ]
+20231103 09:02:33.699 - INFO - + START SUITE: DeMiTestChoMaXem [ ]
 ==============================================================================
-20231102 09:09:31.756 - INFO - +- START SETUP: BuiltIn.Run Keywords [ Log To Console | \nTest Suite Setup.....\n\n------------------------------------------------------------------------------ | AND | Create File | ./conv.txt ]
-20231102 09:09:31.756 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ \nTest Suite Setup.....\n\n------------------------------------------------------------------------------ ]
-20231102 09:09:31.757 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (1)
-20231102 09:09:31.758 - INFO - +-- START KEYWORD: OperatingSystem.Create File [ ./conv.txt ]
-20231102 09:09:31.758 - INFO - Created file '<a href="file:///root/Bao/auto/ex1/conv.txt">/root/Bao/auto/ex1/conv.txt</a>'.
-20231102 09:09:31.758 - INFO - +-- END KEYWORD: OperatingSystem.Create File (0)
-20231102 09:09:31.759 - INFO - +- END SETUP: BuiltIn.Run Keywords (3)
+20231103 09:02:33.701 - INFO - +- START SETUP: BuiltIn.Run Keywords [ Log To Console | \nTest Suite Setup.....\n\n------------------------------------------------------------------------------ | AND | Create File | ./conv.txt ]
+20231103 09:02:33.702 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ \nTest Suite Setup.....\n\n------------------------------------------------------------------------------ ]
+20231103 09:02:33.704 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (1)
+20231103 09:02:33.704 - INFO - +-- START KEYWORD: OperatingSystem.Create File [ ./conv.txt ]
+20231103 09:02:33.705 - INFO - Created file '<a href="file:///root/Bao/auto/ex1/conv.txt">/root/Bao/auto/ex1/conv.txt</a>'.
+20231103 09:02:33.705 - INFO - +-- END KEYWORD: OperatingSystem.Create File (1)
+20231103 09:02:33.706 - INFO - +- END SETUP: BuiltIn.Run Keywords (5)
 ------------------------------------------------------------------------------
-20231102 09:09:31.759 - INFO - +- START TEST: Verify <New item> Function With Valid Input Set [ ]
+20231103 09:02:33.715 - INFO - +- START TEST: Verify <New item> Function With Valid Input Set [ ]
 ------------------------------------------------------------------------------
-20231102 09:09:31.761 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "2\netheral blade\n100\n850000\n4\n0" | ./run_file.sh | shell=True | cwd=/root/Bao/cpp/test | stdin=PIPE | stdout=/root/Bao/auto/ex1/result.txt ]
-20231102 09:09:31.763 - INFO - Starting process:
+20231103 09:02:33.717 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "2\netheral blade\n100\n850000\n4\n0" | ./run_file.sh | shell=True | cwd=/root/Bao/cpp/test | stdin=PIPE | stdout=/root/Bao/auto/ex1/result.txt ]
+20231103 09:02:33.718 - INFO - Starting process:
 echo -n "2
 etheral blade
 100
 850000
 4
 0" | ./run_file.sh
-20231102 09:09:31.764 - DEBUG - Process configuration:
+20231103 09:02:33.718 - DEBUG - Process configuration:
 cwd:     /root/Bao/cpp/test
 shell:   True
 stdout:  /root/Bao/auto/ex1/result.txt
@@ -27,37 +27,37 @@ stderr:  PIPE
 stdin:   PIPE
 alias:   None
 env:     None
-20231102 09:09:31.770 - INFO - Waiting for process to complete.
-20231102 09:09:32.927 - INFO - Process completed.
-20231102 09:09:32.928 - INFO - ${test1} = <result object with rc 0>
-20231102 09:09:32.929 - INFO - +-- END KEYWORD: Process.Run Process (1167)
+20231103 09:02:33.738 - INFO - Waiting for process to complete.
+20231103 09:02:35.406 - INFO - Process completed.
+20231103 09:02:35.407 - INFO - ${test1} = <result object with rc 0>
+20231103 09:02:35.408 - INFO - +-- END KEYWORD: Process.Run Process (1690)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:32.929 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${test1.stdout.strip()} | etheral blade ]
-20231102 09:09:32.932 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (3)
+20231103 09:02:35.408 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${test1.stdout.strip()} | etheral blade ]
+20231103 09:02:35.411 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (3)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:32.933 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
-20231102 09:09:32.934 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
-20231102 09:09:32.935 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
-20231102 09:09:32.936 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
-20231102 09:09:32.937 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:32.938 - INFO - +------ END KEYWORD: lib.Empty File (1)
-20231102 09:09:32.938 - INFO - +----- END ITERATION: ${element} = ./result.txt (2)
-20231102 09:09:32.938 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
-20231102 09:09:32.939 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:32.940 - INFO - +------ END KEYWORD: lib.Empty File (1)
-20231102 09:09:32.940 - INFO - +----- END ITERATION: ${element} = ./conv.txt (2)
-20231102 09:09:32.940 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (5)
-20231102 09:09:32.941 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (7)
-20231102 09:09:32.941 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (8)
+20231103 09:02:35.412 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
+20231103 09:02:35.412 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
+20231103 09:02:35.416 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
+20231103 09:02:35.416 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
+20231103 09:02:35.417 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:35.420 - INFO - +------ END KEYWORD: lib.Empty File (3)
+20231103 09:02:35.420 - INFO - +----- END ITERATION: ${element} = ./result.txt (4)
+20231103 09:02:35.420 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
+20231103 09:02:35.421 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:35.421 - INFO - +------ END KEYWORD: lib.Empty File (0)
+20231103 09:02:35.432 - INFO - +----- END ITERATION: ${element} = ./conv.txt (2)
+20231103 09:02:35.432 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (16)
+20231103 09:02:35.432 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (20)
+20231103 09:02:35.432 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (20)
 ------------------------------------------------------------------------------
-20231102 09:09:32.942 - INFO - +- END TEST: Verify <New item> Function With Valid Input Set (1182)
+20231103 09:02:35.433 - INFO - +- END TEST: Verify <New item> Function With Valid Input Set (1726)
 ------------------------------------------------------------------------------
-20231102 09:09:32.943 - INFO - +- START TEST: Verify <New customer> Function With Valid Input Set [ ]
+20231103 09:02:35.434 - INFO - +- START TEST: Verify <New customer> Function With Valid Input Set [ ]
 ------------------------------------------------------------------------------
-20231102 09:09:32.944 - INFO - +-- START KEYWORD: Process.Run Process [ ./mainApp | shell=True | cwd=/root/Bao/cpp/test/build | stdout=/root/Bao/auto/ex1/result.txt | stdin=/root/Bao/auto/ex1/input2.txt | timeout=1 ]
-20231102 09:09:32.945 - INFO - Starting process:
+20231103 09:02:35.441 - INFO - +-- START KEYWORD: Process.Run Process [ ./mainApp | shell=True | cwd=/root/Bao/cpp/test/build | stdout=/root/Bao/auto/ex1/result.txt | stdin=/root/Bao/auto/ex1/input2.txt | timeout=1 ]
+20231103 09:02:35.442 - INFO - Starting process:
 ./mainApp
-20231102 09:09:32.945 - DEBUG - Process configuration:
+20231103 09:02:35.442 - DEBUG - Process configuration:
 cwd:     /root/Bao/cpp/test/build
 shell:   True
 stdout:  /root/Bao/auto/ex1/result.txt
@@ -65,56 +65,56 @@ stderr:  PIPE
 stdin:   /root/Bao/auto/ex1/input2.txt
 alias:   None
 env:     None
-20231102 09:09:32.953 - INFO - Waiting for process to complete.
-20231102 09:09:33.154 - INFO - Process completed.
-20231102 09:09:33.155 - INFO - ${proc2} = <result object with rc 0>
-20231102 09:09:33.156 - INFO - +-- END KEYWORD: Process.Run Process (211)
+20231103 09:02:35.477 - INFO - Waiting for process to complete.
+20231103 09:02:35.679 - INFO - Process completed.
+20231103 09:02:35.680 - INFO - ${proc2} = <result object with rc 0>
+20231103 09:02:35.681 - INFO - +-- END KEYWORD: Process.Run Process (239)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.156 - INFO - +-- START KEYWORD: ex1_2.Check customers list after adding new customers [ ./result.txt | ./conv.txt ]
-20231102 09:09:33.158 - INFO - +--- START KEYWORD: lib.Match Regex Customer [ ]
-20231102 09:09:33.165 - INFO - +--- END KEYWORD: lib.Match Regex Customer (6)
-20231102 09:09:33.165 - INFO - +--- START KEYWORD: lib.Verify Customer Output [ ]
-20231102 09:09:33.170 - INFO - ${ver} = 4
-20231102 09:09:33.172 - INFO - +--- END KEYWORD: lib.Verify Customer Output (6)
-20231102 09:09:33.172 - INFO - +--- START RETURN:  [ ${ver} ]
-20231102 09:09:33.172 - INFO - +--- END RETURN:  (0)
-20231102 09:09:33.173 - INFO - ${result2} = 4
-20231102 09:09:33.178 - INFO - +-- END KEYWORD: ex1_2.Check customers list after adding new customers (22)
+20231103 09:02:35.681 - INFO - +-- START KEYWORD: ex1_2.Check customers list after adding new customers [ ./result.txt | ./conv.txt ]
+20231103 09:02:35.682 - INFO - +--- START KEYWORD: lib.Match Regex Customer [ ]
+20231103 09:02:35.685 - INFO - +--- END KEYWORD: lib.Match Regex Customer (3)
+20231103 09:02:35.686 - INFO - +--- START KEYWORD: lib.Verify Customer Output [ ]
+20231103 09:02:35.688 - INFO - ${ver} = 4
+20231103 09:02:35.695 - INFO - +--- END KEYWORD: lib.Verify Customer Output (3)
+20231103 09:02:35.696 - INFO - +--- START RETURN:  [ ${ver} ]
+20231103 09:02:35.696 - INFO - +--- END RETURN:  (0)
+20231103 09:02:35.697 - INFO - ${result2} = 4
+20231103 09:02:35.697 - INFO - +-- END KEYWORD: ex1_2.Check customers list after adding new customers (16)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.179 - INFO - +-- START KEYWORD: BuiltIn.Should Be Equal As Integers [ ${result2} | 4 ]
-20231102 09:09:33.180 - INFO - Argument types are:
+20231103 09:02:35.698 - INFO - +-- START KEYWORD: BuiltIn.Should Be Equal As Integers [ ${result2} | 4 ]
+20231103 09:02:35.698 - INFO - Argument types are:
 <class 'int'>
 <class 'str'>
-20231102 09:09:33.180 - INFO - +-- END KEYWORD: BuiltIn.Should Be Equal As Integers (1)
+20231103 09:02:35.699 - INFO - +-- END KEYWORD: BuiltIn.Should Be Equal As Integers (1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.181 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
-20231102 09:09:33.182 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
-20231102 09:09:33.183 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
-20231102 09:09:33.184 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
-20231102 09:09:33.185 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:33.188 - INFO - +------ END KEYWORD: lib.Empty File (3)
-20231102 09:09:33.189 - INFO - +----- END ITERATION: ${element} = ./result.txt (6)
-20231102 09:09:33.189 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
-20231102 09:09:33.189 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:33.196 - INFO - +------ END KEYWORD: lib.Empty File (7)
-20231102 09:09:33.196 - INFO - +----- END ITERATION: ${element} = ./conv.txt (7)
-20231102 09:09:33.197 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (13)
-20231102 09:09:33.197 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (15)
-20231102 09:09:33.197 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (16)
+20231103 09:02:35.700 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
+20231103 09:02:35.700 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
+20231103 09:02:35.701 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
+20231103 09:02:35.703 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
+20231103 09:02:35.703 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:35.706 - INFO - +------ END KEYWORD: lib.Empty File (2)
+20231103 09:02:35.707 - INFO - +----- END ITERATION: ${element} = ./result.txt (4)
+20231103 09:02:35.707 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
+20231103 09:02:35.707 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:35.714 - INFO - +------ END KEYWORD: lib.Empty File (7)
+20231103 09:02:35.715 - INFO - +----- END ITERATION: ${element} = ./conv.txt (8)
+20231103 09:02:35.715 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (14)
+20231103 09:02:35.715 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (15)
+20231103 09:02:35.716 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (15)
 ------------------------------------------------------------------------------
-20231102 09:09:33.198 - INFO - +- END TEST: Verify <New customer> Function With Valid Input Set (255)
+20231103 09:02:35.716 - INFO - +- END TEST: Verify <New customer> Function With Valid Input Set (283)
 ------------------------------------------------------------------------------
-20231102 09:09:33.199 - INFO - +- START TEST: Verify <New customer> Function With Wrong Info [ ]
+20231103 09:02:35.717 - INFO - +- START TEST: Verify <New customer> Function With Wrong Info [ ]
 ------------------------------------------------------------------------------
-20231102 09:09:33.200 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "1\nbao\n \n911\n3\n0" | ./mainApp | shell=True | cwd=/root/Bao/cpp/test/build | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=1 ]
-20231102 09:09:33.201 - INFO - Starting process:
+20231103 09:02:35.718 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "1\nbao\n \n911\n3\n0" | ./mainApp | shell=True | cwd=/root/Bao/cpp/test/build | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=1 ]
+20231103 09:02:35.719 - INFO - Starting process:
 echo -n "1
 bao
  
 911
 3
 0" | ./mainApp
-20231102 09:09:33.202 - DEBUG - Process configuration:
+20231103 09:02:35.719 - DEBUG - Process configuration:
 cwd:     /root/Bao/cpp/test/build
 shell:   True
 stdout:  /root/Bao/auto/ex1/result.txt
@@ -122,58 +122,58 @@ stderr:  PIPE
 stdin:   PIPE
 alias:   None
 env:     None
-20231102 09:09:33.234 - INFO - Waiting for process to complete.
-20231102 09:09:33.336 - INFO - Process completed.
-20231102 09:09:33.336 - INFO - ${proc3} = <result object with rc 0>
-20231102 09:09:33.337 - INFO - +-- END KEYWORD: Process.Run Process (137)
+20231103 09:02:35.737 - INFO - Waiting for process to complete.
+20231103 09:02:35.838 - INFO - Process completed.
+20231103 09:02:35.839 - INFO - ${proc3} = <result object with rc 0>
+20231103 09:02:35.840 - INFO - +-- END KEYWORD: Process.Run Process (121)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.338 - INFO - +-- START KEYWORD: ex1_2.Check customers list after adding new customers [ ./result.txt | ./conv.txt ]
-20231102 09:09:33.339 - INFO - +--- START KEYWORD: lib.Match Regex Customer [ ]
-20231102 09:09:33.341 - INFO - +--- END KEYWORD: lib.Match Regex Customer (2)
-20231102 09:09:33.341 - INFO - +--- START KEYWORD: lib.Verify Customer Output [ ]
-20231102 09:09:33.342 - INFO - ${ver} = Fail at Address field - profile 1
+20231103 09:02:35.840 - INFO - +-- START KEYWORD: ex1_2.Check customers list after adding new customers [ ./result.txt | ./conv.txt ]
+20231103 09:02:35.841 - INFO - +--- START KEYWORD: lib.Match Regex Customer [ ]
+20231103 09:02:35.842 - INFO - +--- END KEYWORD: lib.Match Regex Customer (1)
+20231103 09:02:35.843 - INFO - +--- START KEYWORD: lib.Verify Customer Output [ ]
+20231103 09:02:35.843 - INFO - ${ver} = Fail at Address field - profile 1
 Actual value: "Address:"
 Expect value: non empty letter sequence
-20231102 09:09:33.342 - INFO - +--- END KEYWORD: lib.Verify Customer Output (1)
-20231102 09:09:33.348 - INFO - +--- START RETURN:  [ ${ver} ]
-20231102 09:09:33.348 - INFO - +--- END RETURN:  (0)
-20231102 09:09:33.350 - INFO - ${result3} = Fail at Address field - profile 1
+20231103 09:02:35.843 - INFO - +--- END KEYWORD: lib.Verify Customer Output (1)
+20231103 09:02:35.843 - INFO - +--- START RETURN:  [ ${ver} ]
+20231103 09:02:35.844 - INFO - +--- END RETURN:  (1)
+20231103 09:02:35.844 - INFO - ${result3} = Fail at Address field - profile 1
 Actual value: "Address:"
 Expect value: non empty letter sequence
-20231102 09:09:33.351 - INFO - +-- END KEYWORD: ex1_2.Check customers list after adding new customers (13)
+20231103 09:02:35.846 - INFO - +-- END KEYWORD: ex1_2.Check customers list after adding new customers (4)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.352 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ \n\n${result3}\n ]
-20231102 09:09:33.353 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (1)
+20231103 09:02:35.847 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ \n\n${result3}\n ]
+20231103 09:02:35.853 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (5)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.355 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${result3} | Fail at Address field ]
-20231102 09:09:33.356 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (1)
+20231103 09:02:35.853 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${result3} | Fail at Address field ]
+20231103 09:02:35.854 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.357 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
-20231102 09:09:33.361 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
-20231102 09:09:33.362 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
-20231102 09:09:33.362 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
-20231102 09:09:33.363 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:33.371 - INFO - +------ END KEYWORD: lib.Empty File (7)
-20231102 09:09:33.371 - INFO - +----- END ITERATION: ${element} = ./result.txt (9)
-20231102 09:09:33.371 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
-20231102 09:09:33.372 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:33.373 - INFO - +------ END KEYWORD: lib.Empty File (1)
-20231102 09:09:33.373 - INFO - +----- END ITERATION: ${element} = ./conv.txt (2)
-20231102 09:09:33.374 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (12)
-20231102 09:09:33.374 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (13)
-20231102 09:09:33.377 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (19)
+20231103 09:02:35.855 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
+20231103 09:02:35.855 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
+20231103 09:02:35.857 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
+20231103 09:02:35.857 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
+20231103 09:02:35.857 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:35.858 - INFO - +------ END KEYWORD: lib.Empty File (1)
+20231103 09:02:35.858 - INFO - +----- END ITERATION: ${element} = ./result.txt (1)
+20231103 09:02:35.860 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
+20231103 09:02:35.860 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:35.861 - INFO - +------ END KEYWORD: lib.Empty File (1)
+20231103 09:02:35.861 - INFO - +----- END ITERATION: ${element} = ./conv.txt (1)
+20231103 09:02:35.861 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (4)
+20231103 09:02:35.861 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (6)
+20231103 09:02:35.864 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (6)
 ------------------------------------------------------------------------------
-20231102 09:09:33.377 - INFO - +- END TEST: Verify <New customer> Function With Wrong Info (178)
+20231103 09:02:35.868 - INFO - +- END TEST: Verify <New customer> Function With Wrong Info (147)
 ------------------------------------------------------------------------------
-20231102 09:09:33.379 - INFO - +- START TEST: Verify <Make a new order> Function With Invalid Input Set [ ]
+20231103 09:02:35.869 - INFO - +- START TEST: Verify <Make a new order> Function With Invalid Input Set [ ]
 ------------------------------------------------------------------------------
-20231102 09:09:33.384 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "6\n123\niphone\n0" | ./mainApp | shell=True | cwd=/root/Bao/cpp/test/build | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=1 ]
-20231102 09:09:33.391 - INFO - Starting process:
+20231103 09:02:35.874 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "6\n123\niphone\n0" | ./mainApp | shell=True | cwd=/root/Bao/cpp/test/build | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=1 ]
+20231103 09:02:35.875 - INFO - Starting process:
 echo -n "6
 123
 iphone
 0" | ./mainApp
-20231102 09:09:33.391 - DEBUG - Process configuration:
+20231103 09:02:35.875 - DEBUG - Process configuration:
 cwd:     /root/Bao/cpp/test/build
 shell:   True
 stdout:  /root/Bao/auto/ex1/result.txt
@@ -181,35 +181,35 @@ stderr:  PIPE
 stdin:   PIPE
 alias:   None
 env:     None
-20231102 09:09:33.411 - INFO - Waiting for process to complete.
-20231102 09:09:33.512 - INFO - Process completed.
-20231102 09:09:33.513 - INFO - ${proc4} = <result object with rc 0>
-20231102 09:09:33.514 - INFO - +-- END KEYWORD: Process.Run Process (129)
+20231103 09:02:35.894 - INFO - Waiting for process to complete.
+20231103 09:02:35.995 - INFO - Process completed.
+20231103 09:02:35.996 - INFO - ${proc4} = <result object with rc 0>
+20231103 09:02:35.996 - INFO - +-- END KEYWORD: Process.Run Process (124)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.514 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${proc4.stdout.strip()} | Item not exits ]
-20231102 09:09:33.517 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (2)
+20231103 09:02:35.997 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${proc4.stdout.strip()} | Item not exits ]
+20231103 09:02:35.999 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:33.518 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
-20231102 09:09:33.518 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
-20231102 09:09:33.521 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
-20231102 09:09:33.521 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
-20231102 09:09:33.522 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:33.524 - INFO - +------ END KEYWORD: lib.Empty File (2)
-20231102 09:09:33.525 - INFO - +----- END ITERATION: ${element} = ./result.txt (4)
-20231102 09:09:33.530 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
-20231102 09:09:33.530 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:33.531 - INFO - +------ END KEYWORD: lib.Empty File (1)
-20231102 09:09:33.532 - INFO - +----- END ITERATION: ${element} = ./conv.txt (2)
-20231102 09:09:33.532 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (11)
-20231102 09:09:33.532 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (14)
-20231102 09:09:33.533 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (15)
+20231103 09:02:36.000 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
+20231103 09:02:36.000 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
+20231103 09:02:36.001 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
+20231103 09:02:36.001 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
+20231103 09:02:36.002 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:36.002 - INFO - +------ END KEYWORD: lib.Empty File (0)
+20231103 09:02:36.003 - INFO - +----- END ITERATION: ${element} = ./result.txt (2)
+20231103 09:02:36.003 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
+20231103 09:02:36.003 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:36.020 - INFO - +------ END KEYWORD: lib.Empty File (17)
+20231103 09:02:36.021 - INFO - +----- END ITERATION: ${element} = ./conv.txt (17)
+20231103 09:02:36.021 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (20)
+20231103 09:02:36.021 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (21)
+20231103 09:02:36.021 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (21)
 ------------------------------------------------------------------------------
-20231102 09:09:33.534 - INFO - +- END TEST: Verify <Make a new order> Function With Invalid Input Set (154)
+20231103 09:02:36.022 - INFO - +- END TEST: Verify <Make a new order> Function With Invalid Input Set (152)
 ------------------------------------------------------------------------------
-20231102 09:09:33.535 - INFO - +- START TEST: Verify <Make a new order> Function With Invalid Input Set 2 [ ]
+20231103 09:02:36.022 - INFO - +- START TEST: Verify <Make a new order> Function With Invalid Input Set 2 [ ]
 ------------------------------------------------------------------------------
-20231102 09:09:33.543 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "2\netheral blade\n10\n800000\n6\n123\netheral blade\n101\n0" | ./run_file.sh | shell=True | cwd=/root/Bao/cpp/test/ | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=5 ]
-20231102 09:09:33.544 - INFO - Starting process:
+20231103 09:02:36.026 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "2\netheral blade\n10\n800000\n6\n123\netheral blade\n101\n0" | ./run_file.sh | shell=True | cwd=/root/Bao/cpp/test/ | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=5 ]
+20231103 09:02:36.027 - INFO - Starting process:
 echo -n "2
 etheral blade
 10
@@ -219,7 +219,7 @@ etheral blade
 etheral blade
 101
 0" | ./run_file.sh
-20231102 09:09:33.545 - DEBUG - Process configuration:
+20231103 09:02:36.027 - DEBUG - Process configuration:
 cwd:     /root/Bao/cpp/test
 shell:   True
 stdout:  /root/Bao/auto/ex1/result.txt
@@ -227,35 +227,35 @@ stderr:  PIPE
 stdin:   PIPE
 alias:   None
 env:     None
-20231102 09:09:33.563 - INFO - Waiting for process to complete.
-20231102 09:09:34.365 - INFO - Process completed.
-20231102 09:09:34.366 - INFO - ${proc5} = <result object with rc 0>
-20231102 09:09:34.367 - INFO - +-- END KEYWORD: Process.Run Process (824)
+20231103 09:02:36.046 - INFO - Waiting for process to complete.
+20231103 09:02:37.049 - INFO - Process completed.
+20231103 09:02:37.050 - INFO - ${proc5} = <result object with rc 0>
+20231103 09:02:37.051 - INFO - +-- END KEYWORD: Process.Run Process (1024)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:34.368 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${proc5.stdout.strip()} | Item etheral blade have only 10 in stock ]
-20231102 09:09:34.370 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (2)
+20231103 09:02:37.051 - INFO - +-- START KEYWORD: BuiltIn.Should Contain [ ${proc5.stdout.strip()} | Item etheral blade have only 10 in stock ]
+20231103 09:02:37.054 - INFO - +-- END KEYWORD: BuiltIn.Should Contain (2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:34.371 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
-20231102 09:09:34.372 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
-20231102 09:09:34.373 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
-20231102 09:09:34.380 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
-20231102 09:09:34.381 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:34.382 - INFO - +------ END KEYWORD: lib.Empty File (1)
-20231102 09:09:34.382 - INFO - +----- END ITERATION: ${element} = ./result.txt (2)
-20231102 09:09:34.382 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
-20231102 09:09:34.383 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:34.385 - INFO - +------ END KEYWORD: lib.Empty File (1)
-20231102 09:09:34.385 - INFO - +----- END ITERATION: ${element} = ./conv.txt (3)
-20231102 09:09:34.385 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (12)
-20231102 09:09:34.385 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (13)
-20231102 09:09:34.386 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (15)
+20231103 09:02:37.055 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
+20231103 09:02:37.056 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
+20231103 09:02:37.057 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
+20231103 09:02:37.065 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
+20231103 09:02:37.068 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:37.069 - INFO - +------ END KEYWORD: lib.Empty File (1)
+20231103 09:02:37.074 - INFO - +----- END ITERATION: ${element} = ./result.txt (9)
+20231103 09:02:37.076 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
+20231103 09:02:37.076 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:37.078 - INFO - +------ END KEYWORD: lib.Empty File (2)
+20231103 09:02:37.084 - INFO - +----- END ITERATION: ${element} = ./conv.txt (8)
+20231103 09:02:37.084 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (27)
+20231103 09:02:37.084 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (28)
+20231103 09:02:37.085 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (31)
 ------------------------------------------------------------------------------
-20231102 09:09:34.388 - INFO - +- END TEST: Verify <Make a new order> Function With Invalid Input Set 2 (852)
+20231103 09:02:37.086 - INFO - +- END TEST: Verify <Make a new order> Function With Invalid Input Set 2 (1063)
 ------------------------------------------------------------------------------
-20231102 09:09:34.390 - INFO - +- START TEST: Verify <Make a new order> Function With Valid Input Set [ ]
+20231103 09:02:37.087 - INFO - +- START TEST: Verify <Make a new order> Function With Valid Input Set [ ]
 ------------------------------------------------------------------------------
-20231102 09:09:34.403 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "6\n123\ndivine rapier\n1\nn\nnam\ntma\n911\n3\n0" | ./run_file.sh | shell=True | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=5 | cwd=/root/Bao/cpp/test/ ]
-20231102 09:09:34.404 - INFO - Starting process:
+20231103 09:02:37.100 - INFO - +-- START KEYWORD: Process.Run Process [ echo -n "6\n123\ndivine rapier\n1\nn\nnam\ntma\n911\n3\n0" | ./run_file.sh | shell=True | stdout=/root/Bao/auto/ex1/result.txt | stdin=PIPE | timeout=5 | cwd=/root/Bao/cpp/test/ ]
+20231103 09:02:37.102 - INFO - Starting process:
 echo -n "6
 123
 divine rapier
@@ -266,7 +266,7 @@ tma
 911
 3
 0" | ./run_file.sh
-20231102 09:09:34.404 - DEBUG - Process configuration:
+20231103 09:02:37.102 - DEBUG - Process configuration:
 cwd:     /root/Bao/cpp/test
 shell:   True
 stdout:  /root/Bao/auto/ex1/result.txt
@@ -274,63 +274,63 @@ stderr:  PIPE
 stdin:   PIPE
 alias:   None
 env:     None
-20231102 09:09:34.426 - INFO - Waiting for process to complete.
-20231102 09:09:35.429 - INFO - Process completed.
-20231102 09:09:35.430 - INFO - ${proc6} = <result object with rc 0>
-20231102 09:09:35.431 - INFO - +-- END KEYWORD: Process.Run Process (1027)
+20231103 09:02:37.118 - INFO - Waiting for process to complete.
+20231103 09:02:38.822 - INFO - Process completed.
+20231103 09:02:38.823 - INFO - ${proc6} = <result object with rc 0>
+20231103 09:02:38.824 - INFO - +-- END KEYWORD: Process.Run Process (1723)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:35.432 - INFO - +-- START KEYWORD: ex1_2.Check customer's order list after making a new order [ ./result.txt | nam ]
-20231102 09:09:35.433 - INFO - +--- START KEYWORD: lib.Verify OrderID In Customer [ nam ]
-20231102 09:09:35.436 - INFO - ${ver} = Found the new order ID in customer's order list
-20231102 09:09:35.436 - INFO - +--- END KEYWORD: lib.Verify OrderID In Customer (3)
-20231102 09:09:35.436 - INFO - +--- START RETURN:  [ ${ver} ]
-20231102 09:09:35.440 - INFO - +--- END RETURN:  (4)
-20231102 09:09:35.441 - INFO - ${result6} = Found the new order ID in customer's order list
-20231102 09:09:35.441 - INFO - +-- END KEYWORD: ex1_2.Check customer's order list after making a new order (9)
+20231103 09:02:38.825 - INFO - +-- START KEYWORD: ex1_2.Check customer's order list after making a new order [ ./result.txt | nam ]
+20231103 09:02:38.826 - INFO - +--- START KEYWORD: lib.Verify OrderID In Customer [ nam ]
+20231103 09:02:38.828 - INFO - ${ver} = Found the new order ID in customer's order list
+20231103 09:02:38.828 - INFO - +--- END KEYWORD: lib.Verify OrderID In Customer (2)
+20231103 09:02:38.829 - INFO - +--- START RETURN:  [ ${ver} ]
+20231103 09:02:38.830 - INFO - +--- END RETURN:  (2)
+20231103 09:02:38.831 - INFO - ${result6} = Found the new order ID in customer's order list
+20231103 09:02:38.832 - INFO - +-- END KEYWORD: ex1_2.Check customer's order list after making a new order (6)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:35.442 - INFO - +-- START KEYWORD: BuiltIn.Should Be Equal As Strings [ ${result6} | Found the new order ID in customer's order list ]
-20231102 09:09:35.448 - DEBUG - Argument types are:
+20231103 09:02:38.838 - INFO - +-- START KEYWORD: BuiltIn.Should Be Equal As Strings [ ${result6} | Found the new order ID in customer's order list ]
+20231103 09:02:38.839 - DEBUG - Argument types are:
 <class 'str'>
 <class 'str'>
-20231102 09:09:35.448 - INFO - +-- END KEYWORD: BuiltIn.Should Be Equal As Strings (7)
+20231103 09:02:38.839 - INFO - +-- END KEYWORD: BuiltIn.Should Be Equal As Strings (2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20231102 09:09:35.449 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
-20231102 09:09:35.450 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
-20231102 09:09:35.451 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
-20231102 09:09:35.451 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
-20231102 09:09:35.452 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:35.453 - INFO - +------ END KEYWORD: lib.Empty File (1)
-20231102 09:09:35.453 - INFO - +----- END ITERATION: ${element} = ./result.txt (2)
-20231102 09:09:35.454 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
-20231102 09:09:35.454 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
-20231102 09:09:35.457 - INFO - +------ END KEYWORD: lib.Empty File (3)
-20231102 09:09:35.462 - INFO - +----- END ITERATION: ${element} = ./conv.txt (9)
-20231102 09:09:35.462 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (11)
-20231102 09:09:35.463 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (13)
-20231102 09:09:35.463 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (14)
+20231103 09:02:38.840 - INFO - +-- START TEARDOWN: BuiltIn.Run Keyword [ Empty All Files ]
+20231103 09:02:38.841 - INFO - +--- START KEYWORD: ex1_2.Empty All Files [ ]
+20231103 09:02:38.842 - INFO - +---- START FOR: ${element} IN [ @{filename} ] [ ]
+20231103 09:02:38.842 - INFO - +----- START ITERATION: ${element} = ./result.txt [ ]
+20231103 09:02:38.842 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:38.843 - INFO - +------ END KEYWORD: lib.Empty File (1)
+20231103 09:02:38.845 - INFO - +----- END ITERATION: ${element} = ./result.txt (3)
+20231103 09:02:38.845 - INFO - +----- START ITERATION: ${element} = ./conv.txt [ ]
+20231103 09:02:38.845 - INFO - +------ START KEYWORD: lib.Empty File [ ${element} ]
+20231103 09:02:38.848 - INFO - +------ END KEYWORD: lib.Empty File (3)
+20231103 09:02:38.848 - INFO - +----- END ITERATION: ${element} = ./conv.txt (3)
+20231103 09:02:38.848 - INFO - +---- END FOR: ${element} IN [ @{filename} ] (7)
+20231103 09:02:38.849 - INFO - +--- END KEYWORD: ex1_2.Empty All Files (7)
+20231103 09:02:38.854 - INFO - +-- END TEARDOWN: BuiltIn.Run Keyword (9)
 ------------------------------------------------------------------------------
-20231102 09:09:35.464 - INFO - +- END TEST: Verify <Make a new order> Function With Valid Input Set (1073)
+20231103 09:02:38.856 - INFO - +- END TEST: Verify <Make a new order> Function With Valid Input Set (1768)
 ------------------------------------------------------------------------------
-20231102 09:09:35.467 - INFO - +- START TEARDOWN: BuiltIn.Run Keywords [ Terminate All Processes | kill=True | AND | Log to Console | \nComment out @{filename} file at Resource to read the output file\n | AND | Delete All Files | AND | Log To Console | Test Suite Teardown.....\n ]
-20231102 09:09:35.473 - INFO - +-- START KEYWORD: Process.Terminate All Processes [ kill=True ]
-20231102 09:09:35.474 - INFO - +-- END KEYWORD: Process.Terminate All Processes (1)
-20231102 09:09:35.475 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ \nComment out @{filename} file at Resource to read the output file\n ]
-20231102 09:09:35.476 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (1)
-20231102 09:09:35.476 - INFO - +-- START KEYWORD: ex1_2.Delete All Files [ ]
-20231102 09:09:35.477 - INFO - +--- START FOR: ${element} IN [ @{filename} ] [ ]
-20231102 09:09:35.481 - INFO - +---- START ITERATION: ${element} = ./result.txt [ ]
-20231102 09:09:35.482 - INFO - +----- START KEYWORD: lib.Delete File [ ${element} ]
-20231102 09:09:35.483 - INFO - +----- END KEYWORD: lib.Delete File (1)
-20231102 09:09:35.483 - INFO - +---- END ITERATION: ${element} = ./result.txt (2)
-20231102 09:09:35.484 - INFO - +---- START ITERATION: ${element} = ./conv.txt [ ]
-20231102 09:09:35.484 - INFO - +----- START KEYWORD: lib.Delete File [ ${element} ]
-20231102 09:09:35.485 - INFO - +----- END KEYWORD: lib.Delete File (1)
-20231102 09:09:35.485 - INFO - +---- END ITERATION: ${element} = ./conv.txt (1)
-20231102 09:09:35.485 - INFO - +--- END FOR: ${element} IN [ @{filename} ] (8)
-20231102 09:09:35.493 - INFO - +-- END KEYWORD: ex1_2.Delete All Files (17)
-20231102 09:09:35.494 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ Test Suite Teardown.....\n ]
-20231102 09:09:35.495 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (1)
-20231102 09:09:35.495 - INFO - +- END TEARDOWN: BuiltIn.Run Keywords (28)
+20231103 09:02:38.858 - INFO - +- START TEARDOWN: BuiltIn.Run Keywords [ Terminate All Processes | kill=True | AND | Log to Console | \nComment out @{filename} file at Resource to read the output file\n | AND | Delete All Files | AND | Log To Console | Test Suite Teardown.....\n ]
+20231103 09:02:38.859 - INFO - +-- START KEYWORD: Process.Terminate All Processes [ kill=True ]
+20231103 09:02:38.860 - INFO - +-- END KEYWORD: Process.Terminate All Processes (1)
+20231103 09:02:38.860 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ \nComment out @{filename} file at Resource to read the output file\n ]
+20231103 09:02:38.864 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (4)
+20231103 09:02:38.864 - INFO - +-- START KEYWORD: ex1_2.Delete All Files [ ]
+20231103 09:02:38.865 - INFO - +--- START FOR: ${element} IN [ @{filename} ] [ ]
+20231103 09:02:38.865 - INFO - +---- START ITERATION: ${element} = ./result.txt [ ]
+20231103 09:02:38.867 - INFO - +----- START KEYWORD: lib.Delete File [ ${element} ]
+20231103 09:02:38.868 - INFO - +----- END KEYWORD: lib.Delete File (1)
+20231103 09:02:38.872 - INFO - +---- END ITERATION: ${element} = ./result.txt (6)
+20231103 09:02:38.872 - INFO - +---- START ITERATION: ${element} = ./conv.txt [ ]
+20231103 09:02:38.872 - INFO - +----- START KEYWORD: lib.Delete File [ ${element} ]
+20231103 09:02:38.873 - INFO - +----- END KEYWORD: lib.Delete File (1)
+20231103 09:02:38.874 - INFO - +---- END ITERATION: ${element} = ./conv.txt (1)
+20231103 09:02:38.874 - INFO - +--- END FOR: ${element} IN [ @{filename} ] (9)
+20231103 09:02:38.874 - INFO - +-- END KEYWORD: ex1_2.Delete All Files (10)
+20231103 09:02:38.874 - INFO - +-- START KEYWORD: BuiltIn.Log To Console [ Test Suite Teardown.....\n ]
+20231103 09:02:38.875 - INFO - +-- END KEYWORD: BuiltIn.Log To Console (1)
+20231103 09:02:38.880 - INFO - +- END TEARDOWN: BuiltIn.Run Keywords (23)
 ==============================================================================
-20231102 09:09:35.498 - INFO - + END SUITE: DeMiTestChoMaXem (3845)
+20231103 09:02:38.889 - INFO - + END SUITE: DeMiTestChoMaXem (5344)
 ==============================================================================
